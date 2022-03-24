@@ -1,12 +1,12 @@
 # FSE2022Repair
-A PyTorch Implementation of "Neural Program Repair with Typed Syntax"
+A PyTorch Implementation of "Tare: Type-Aware Neural Program Repair"
 
 # Introduction
-Automated program repair (APR) aims to reduce the effort for software development. With the development of deep learning, lots of DL-based APR approaches have been proposed using an encoder-decoder architecture. Despite the promising performance, these models share one same limitation: generating lots of invalid patches. The main reason for this phenomenon is that the existing models do not take the typing constraint and accessible variable information into consideration.
+Automated program repair (APR) aims to reduce the effort for software development. With the development of deep learning, lots of DL-based APR approaches have been proposed using an encoder-decoder architecture. Despite the promising performance, these models share one same limitation: generating lots of untypable patches. The main reason for this phenomenon is that the existing models do not consider the constraints of code captured by a set of typing rules.
 
-In this paper, we propose, Tech, a relation-aware attention-based model based on the typed syntax graph. We first integrate the typing information with the syntax to generate the typed AST for code. Based on T-AST, we propose a new representation of code, Typed Syntax Graph (T-Graph), containing the typing constraints and the variable information. Finally, tech adopts the relation-aware attention layer to combine global reasoning over the code and variables with structured reasoning over T-AST.
+In this paper, we propose, Tare, a type-aware model for neural program repair to learn the typing rules. To encode an individual typing rule, we introduces three novel components: (1) a novel type of grammars, T-Grammar that integrates the type information into a standard grammar, (2) a novel representation of code, T-Graph that integrates the key information needed for type checking in an AST, and (3) a novel type-aware neural program repair approach, Tare that encodes the T-Graph and generates the patches guided by T-Grammar.
 
-The experiment was conducted on three benchmarks, 393 bugs from {Defects4J v1.2}, 444 additional bugs from {Defects4J v2.0} and 40 bugs from {QuixBugs}. Our results show that tech repairs 64, 32, and 27 bugs on these benchmarks respectively and outperforms the existing APR approaches on all benchmarks. The further analysis also shows that tech tends to generate more valid patches than the existing DL-based APR approaches with the typing and variable information.
+The experiment was conducted on three benchmarks, 393 bugs from Defects4J v1.2, 444 additional bugs from Defects4J v2.0, and 40 bugs from QuixBugs. Our results show that Tare repairs 64, 32, and 27 bugs on these benchmarks respectively and outperforms the existing APR approaches on all benchmarks. The further analysis also shows that Tare tends to generate more compilable patches than the existing DL-based APR approaches with the typing rule information.
 
 
 # The Main File Tree
