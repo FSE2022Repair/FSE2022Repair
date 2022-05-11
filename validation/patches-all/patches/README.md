@@ -28,7 +28,7 @@ Closure(14):
 62,63: The "charno" is get by the method "getCharno". The range of the return value is -1 ~ sourceExcerpt.length(). Thus, the generated condition "excerpt.equals(LINE)&& 0 <= charno" is equivalent to the developer patches.
 Lang(13): 
 6,24,26,29,33,38,45,46,57,59,65,70: Identical to groundtruth.
-10:
+10: Remove the Ifstatement
 16: The string "str" will be tranformed into lowercase, thus the condition "if (str.startsWith("0x") || str.startsWith("-0x"))" is enough.
 55: "RunningState" only can be STATE_RUNNING or STATE_SUSPENDED here. Thus "runningState == STATE_RUNNING" is equal to "runningState != STATE_STATE_SUSPENDED".
 Math(16):
